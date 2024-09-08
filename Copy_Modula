@@ -1,0 +1,17 @@
+---
+- name: Copy file to remote
+  hosts: all
+  tasks:
+    - name: Copy file
+      copy:
+        src: /etc/ansible/my_plays/ar
+        dest: /temp/
+
+############################################################################################################################################################################################
+Explanation:
+
+    hosts: all specifies that the playbook will run on all hosts defined in your inventory.
+    tasks: lists the tasks to be executed.
+    copy: module is used to copy files from the local machine to the remote machine.
+        src: specifies the source file path on the local machine.
+        dest: specifies the destination path on the remote machine.

@@ -1,0 +1,26 @@
+---
+- name: Copy file to remote
+  hosts: all
+  tasks:
+    - name: Copy file
+      copy:
+        src: /etc/ansible/my_plays/ar/ajay.txt
+        dest: /tmp/
+        owner: root
+        backup: true  # backup: true will create a backup of the existing file at the destination before replacing it.
+#####################################################################################################################################################################
+File Name in Destination Path:
+
+    Specified dest: /tmp/ajay.txt to ensure the file is copied with the correct filename. If you only specify /tmp/, the file might be copied without the correct filename, depending on your setup.
+
+Backup Option:
+
+    backup: true will create a backup of the existing file at the destination before replacing it.
+
+Owner:
+
+    The owner: root sets the file owner to root. Ensure this is intended and that you have appropriate permissions.
+
+Optional group and mode:
+
+    You can add group and mode fields if you need to specify group ownership or file permission

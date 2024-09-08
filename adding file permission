@@ -1,0 +1,30 @@
+---
+- name: Copy file to remote
+  hosts: all
+  tasks:
+    - name: Copy file
+      copy:
+        src: /etc/ansible/my_plays/ar/ajay.txt
+        dest: /tmp/
+        owner: root
+############################################################################################################################################################################################
+## this 2nd file ##
+---
+- name: Copy file to remote
+  hosts: all
+  tasks:
+    - name: Copy file
+      copy:
+        src: /etc/ansible/my_plays/ar/ajay.txt
+        dest: /tmp/ajay.txt
+        owner: root
+        group: root
+        mode: '0644'
+###########################################################################################################################################################################################
+Explanation:
+
+    src: is the path to the file on the local machine.
+    dest: is the path where the file will be copied on the remote machine. Ensure the /tmp/ directory exists on the remote hosts.
+    owner: specifies the user that will own the file on the remote machine.
+    group: specifies the group that will own the file on the remote machine.
+    mode: specifies the file permissions (in octal format).

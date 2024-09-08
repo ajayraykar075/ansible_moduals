@@ -1,0 +1,8 @@
+---
+- name: Create a directory
+  hosts: all
+  tasks:
+    - name: Ensure /tmp/ganesh/ directory exists
+      file:
+        path: /tmp/ganesh/ajay
+        state: absent 
